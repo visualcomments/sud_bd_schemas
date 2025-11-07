@@ -86,4 +86,4 @@ EMBEDDER=random  # openai | sentence-transformers | random
 SQL-файлы в `sql/migrations/` применяются по порядку. Повторный прогон безопасен благодаря `IF NOT EXISTS` и проверкам.
 
 ## Лицензия
-MIT.
+GNU GPL v.3
