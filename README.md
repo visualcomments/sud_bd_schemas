@@ -62,6 +62,7 @@ etl/                    # ETL/ELT пайплайны и коннекторы к 
 examples/               # Примеры
 scripts/                # Утилиты запуска
 docker/                 # Dockerfile и docker-compose для PostgreSQL + pgvector
+docs/                   # Документация по схемам и источникам
 ```
 
 ## Требования
@@ -84,6 +85,11 @@ EMBEDDER=random  # openai | sentence-transformers | random
 
 ## Миграции
 SQL-файлы в `sql/migrations/` применяются по порядку. Повторный прогон безопасен благодаря `IF NOT EXISTS` и проверкам.
+
+## Документация по схемам и источникам
+- [SCHEMA_SOURCE_MAPPING.md](docs/SCHEMA_SOURCE_MAPPING.md)
+- [SCRAPING_GUIDE.md](docs/SCRAPING_GUIDE.md)
+
 
 ## Лицензия
 GNU GPL v.3
