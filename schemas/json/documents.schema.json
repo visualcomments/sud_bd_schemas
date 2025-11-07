@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "documents.schema.json",
+  "title": "CourtDocument",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "doc_uid",
+    "case_uid",
+    "doc_type",
+    "decision_date",
+    "text_sha256"
+  ],
+  "properties": {
+    "doc_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "case_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "doc_type": {
+      "type": "string"
+    },
+    "decision_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "judge": {
+      "type": "string"
+    },
+    "panel": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "filename": {
+      "type": "string"
+    },
+    "mime_type": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string",
+      "default": "ru"
+    },
+    "text_length": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "text_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "text_gz_base64": {
+      "type": "string"
+    },
+    "applied_articles": {
+      "type": "array",
+      "items": {
+        "$ref": "laws.schema.json"
+      }
+    },
+    "extraction_id": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}

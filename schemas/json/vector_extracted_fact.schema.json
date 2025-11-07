@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "vector_extracted_fact.schema.json",
+  "title": "VectorExtractedFact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "doc_uid",
+    "case_uid",
+    "field_name",
+    "value_text",
+    "embedding"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "case_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "doc_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "field_name": {
+      "type": "string",
+      "enum": [
+        "plaintiff_claims",
+        "plaintiff_arguments",
+        "defendant_arguments",
+        "evaluation_of_evidence",
+        "intermediate_conclusions",
+        "applicable_laws",
+        "judgment_summary"
+      ]
+    },
+    "value_text": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence_span": {
+      "type": "object",
+      "properties": {
+        "char_start": {
+          "type": "integer"
+        },
+        "char_end": {
+          "type": "integer"
+        }
+      }
+    },
+    "embedding": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 64
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "model_name": {
+      "type": "string"
+    },
+    "model_version": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

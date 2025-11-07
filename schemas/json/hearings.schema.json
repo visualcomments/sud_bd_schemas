@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hearings.schema.json",
+  "title": "Hearing",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "hearing_uid",
+    "case_uid",
+    "scheduled_start"
+  ],
+  "properties": {
+    "hearing_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "case_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "scheduled_start": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "scheduled_end": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "room": {
+      "type": "string"
+    },
+    "result": {
+      "type": "string"
+    },
+    "judge": {
+      "type": "string"
+    },
+    "minutes_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "video_url": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

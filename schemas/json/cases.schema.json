@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cases.schema.json",
+  "title": "Case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_uid",
+    "court_uid",
+    "case_number",
+    "filing_date",
+    "jurisdiction"
+  ],
+  "properties": {
+    "case_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "court_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "case_number": {
+      "type": "string"
+    },
+    "sudrf_case_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "jurisdiction": {
+      "type": "string",
+      "enum": [
+        "гражданское",
+        "административное",
+        "уголовное",
+        "арбитраж"
+      ]
+    },
+    "category": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "claim_amount_rub": {
+      "type": "number",
+      "minimum": 0
+    },
+    "filing_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string"
+    },
+    "secrecy": {
+      "type": "string",
+      "enum": [
+        "публично",
+        "анонимизировано",
+        "скрыто"
+      ]
+    },
+    "instance_path": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "judges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_court_name": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ingestion_id": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}

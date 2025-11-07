@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "parties.schema.json",
+  "title": "CaseParty",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "party_uid",
+    "case_uid",
+    "role",
+    "display_name"
+  ],
+  "properties": {
+    "party_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "case_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "role": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "inn": {
+      "type": "string"
+    },
+    "ogrn": {
+      "type": "string"
+    },
+    "birthdate": {
+      "type": "string",
+      "format": "date"
+    },
+    "address": {
+      "type": "string"
+    },
+    "lawyers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

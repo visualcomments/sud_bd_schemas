@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "extracted_decision_fields.schema.json",
+  "title": "ExtractedDecisionFields",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "doc_uid",
+    "extraction_id",
+    "model_name",
+    "timestamp"
+  ],
+  "properties": {
+    "doc_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "extraction_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "model_name": {
+      "type": "string"
+    },
+    "model_version": {
+      "type": "string"
+    },
+    "prompt_hash": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "plaintiff_claims": {
+      "type": "string"
+    },
+    "plaintiff_arguments": {
+      "type": "string"
+    },
+    "defendant_arguments": {
+      "type": "string"
+    },
+    "evaluation_of_evidence": {
+      "type": "string"
+    },
+    "intermediate_conclusions": {
+      "type": "string"
+    },
+    "applicable_laws": {
+      "type": "string"
+    },
+    "judgment_summary": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence_spans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "field",
+          "start",
+          "end"
+        ],
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

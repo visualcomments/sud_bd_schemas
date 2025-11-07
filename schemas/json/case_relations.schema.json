@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "case_relations.schema.json",
+  "title": "CaseRelation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "relation_uid",
+    "from_case_uid",
+    "to_case_uid",
+    "kind"
+  ],
+  "properties": {
+    "relation_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "from_case_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "to_case_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    }
+  }
+}

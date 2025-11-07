@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "vector_document_chunk.schema.json",
+  "title": "VectorDocumentChunk",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "doc_uid",
+    "case_uid",
+    "chunk_text",
+    "embedding"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string"
+    },
+    "case_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "doc_uid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "doc_type": {
+      "type": "string"
+    },
+    "decision_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "chunk_no": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "char_start": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "char_end": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "token_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "section_hint": {
+      "type": "string"
+    },
+    "field_tag": {
+      "type": "string",
+      "enum": [
+        "plaintiff_arguments",
+        "defendant_arguments",
+        "evaluation_of_evidence",
+        "intermediate_conclusions",
+        "applicable_laws",
+        "judgment_summary",
+        "other"
+      ]
+    },
+    "chunk_text": {
+      "type": "string"
+    },
+    "embedding": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 64
+    },
+    "text_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "model_name": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

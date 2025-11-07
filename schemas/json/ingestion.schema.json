@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ingestion.schema.json",
+  "title": "IngestionRun",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ingestion_id",
+    "source_system",
+    "started_at"
+  ],
+  "properties": {
+    "ingestion_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "source_system": {
+      "type": "string",
+      "enum": [
+        "sudrf.ru",
+        "ej.sudrf.ru",
+        "court_site"
+      ]
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "crawler_version": {
+      "type": "string"
+    },
+    "parser_version": {
+      "type": "string"
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finished_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "http_status": {
+      "type": "integer"
+    },
+    "robots_status": {
+      "type": "string"
+    },
+    "raw_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}
